@@ -1,6 +1,7 @@
 var exports = module.exports = {};
 
-
+exports.email = 'haqtaha@gmail.com',
+exports.SALT = 10;
 exports.secret = 'MFswDQYJKoZIhvcNAQEBBQADSgAwRwJAW4lFUCuJ6QDo5djTQtuhebj9aNq/m59hwvgWNXNz3q8PJ6vQXEOoXE7smZARn+4+7RP+olUYfIGDiji4NBLYCQIDAQAB';
 exports.admin_email = "haqtaha@gmail.com";
 
