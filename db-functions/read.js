@@ -17,7 +17,7 @@ exports.authenticateUser = async (user) => {
             throw new Error(constants.responseMessages.passwordNotMatch);
         }
 
-        let token = jwt.sign({id: dbUser[0]._id}, constants.secret.secret, {
+        let token = jwt.sign({id: dbUser[0]._id}, constants.secret, {
             expiresIn: 84600
         });
 

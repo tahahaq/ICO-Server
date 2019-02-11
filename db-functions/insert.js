@@ -84,7 +84,7 @@ exports.insertUser = async (user) => {
                 time : user.time,
             });
 
-            let token = jwt.sign({id : insertedUser._id } , constants.secret.secret , {
+            let token = jwt.sign({id : insertedUser._id } , constants.secret , {
                 expiresIn: 84600
             });
 

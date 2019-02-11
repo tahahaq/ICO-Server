@@ -8,6 +8,8 @@ let express = require("express"),
     mongoose = require("mongoose");
 
 let emailRoutes = require("./routes/email");
+let userRoutes = require("./routes/user");
+
 
 // App Config
 
@@ -19,9 +21,11 @@ app.use(methodOverride("_method"));
 
 
 app.use('/email', emailRoutes);
+app.use('/user', userRoutes);
 
 
-const port = process.env.PORT || 7001;
+
+const port = process.env.PORT || 4000;
 app.listen(port);
 
 console.log(`Buildabilty Server listening on ${port}`);
