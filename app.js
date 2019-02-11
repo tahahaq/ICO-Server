@@ -11,7 +11,7 @@ let emailRoutes = require("./routes/email");
 
 // App Config
 
-mongoose.connect("mongodb://eric:qwe123@ds127545.mlab.com:27545/ico-buildabilty");
+mongoose.connect("mongodb://eric:qweasd123@ds127545.mlab.com:27545/ico-buildabilty");
 
 app.use(bodyParser.json({extended: true}));
 app.use(cors());
