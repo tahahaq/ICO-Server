@@ -1,14 +1,11 @@
 {
-  "name": "Buildabilty Server",
+  "name": "ico-server",
   "version": "1.0.0",
-  "description": "Buildabilty ICO Server",
+  "description": "",
   "main": "app.js",
-  "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "directories": {
+    "doc": "doc"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
@@ -16,7 +13,21 @@
     "express": "^4.16.4",
     "jsonwebtoken": "^8.4.0",
     "method-override": "^3.0.0",
-    "mongoose": "^5.4.10",
+    "mongoose": "^5.4.11",
     "nodemailer": "^5.1.1"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tahahaq/ICO-Server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tahahaq/ICO-Server/issues"
+  },
+  "homepage": "https://github.com/tahahaq/ICO-Server#readme"
 }

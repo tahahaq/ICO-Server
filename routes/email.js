@@ -66,7 +66,6 @@ router.post("/subscribe", function (req, res) {
   *  "email" : "ali@gmail.com",
   *   "name" :  "ali",
   *   "message" : "Please Contact me!"
-}
  *
  *  }
  * @apiSuccessExample {json} Success

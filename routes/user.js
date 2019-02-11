@@ -13,7 +13,7 @@ let express = require('express'),
 
 
 /**
- * @api {post} /user-login  Signs In The EndUser
+ * @api {post} user/user-login  Signs In The EndUser
  * @apiGroup Auth
  *@apiName Sign In
  *  @apiParamExample {json} Input
@@ -36,10 +36,7 @@ let express = require('express'),
  *                          "name": "ahshq",
  *                          "email": "123@123.com",
  *                          "dateOfBirth": "Fri Jan 01 1999 00:00:00 GMT+0500 (Pakistan Standard Time)",
- *                          "gender": "Male",
- *                          "profile_photo_url": "https://firebasestorage.googleapis.com/v0/b/rough-2f8bc.appspot.com/o/1.jpg?alt=media&token=ddacd543-dfab-4697-bc44-c7f49e74bd0d",
  *                          "time": "2018-12-25T07:37:05.415Z",
- *                          "uuid": "764ba4bc-67ba-40bf-8d91-843c2351b3aa",
  *                          "__v": 0
  *                      }
  *                  }
@@ -86,7 +83,7 @@ router.get('/logout', function (req, res) {
 
 
 /**
- * @api {post} /admin/forgot-password  Sends email for password reset
+ * @api {post} /user/forgot-password  Sends email for password reset
  * @apiGroup Auth
  *@apiName Forgot Password
  *  * @apiParamExample {json} Input
@@ -135,7 +132,7 @@ router.post('/forgot-password', function (req, res) {
 
 
 /**
- * @api {get} /admin/reset/:token Token validation for password reset
+ * @api {get} /user/reset/:token Token validation for password reset
  * @apiGroup Auth
  * @apiName Checks if token is valid
  * @apiParam {id} token user token from email
@@ -181,7 +178,7 @@ router.get('/reset/:token',  function (req, res) {
 
 
 /**
- * @api {post} /admin/reset/:token Resets the password
+ * @api {post} /user/reset/:token Resets the password
  * @apiGroup Auth
  * @apiParam {id} token user token from email
  *  * @apiParamExample {json} Input
@@ -229,37 +226,18 @@ router.post('/reset/:token',  function (req, res) {
 });
 
 
-router.post('/get-all-users', verifyToken, function (req, res) {
-    db_read.getAllUsers().then((response) => {
-        //SUCCESS
-        res.status(201).send(
-            {
-                responseCode: 201,
-                responseMessage: constants.responseMessages.Success,
-                data: {
-                    results: response
-                }
-            }
-        )
-    }).catch((error) => {
-        //ERROR
-        res.status(500).send(
-            {
-                responseCode: 500,
-                responseMessage: error.message
-            }
-        )
-    });
-});
-
 
 
 /**
- * @api {post} /admin/user-register Register a new User
+ * @api {post} /user/user-register Register a new User
  * @apiGroup Auth
  *  * @apiParamExample {json} Input
  *    {
- *      "password" : "anyPassword"
+ *    "name" : "JOhn smith",
+ *      "email" : "email@example.com",
+ *      "time" : "124323433",
+ *        "dateOfBirth": "Fri Jan 01 1999 00:00:00 GMT+0500 (Pakistan Standard Time)",
+  *      "password" : "anyPassword"
  *    }
  *
  *
